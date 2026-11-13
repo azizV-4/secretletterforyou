@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6e3ec">
+<title>A letter for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 1.5c.7 5.6 4.9 9.8 10.5 10.5-5.6.7-9.8 4.9-10.5 10.5C11.3 16.9 7.1 12.7 1.5 12 7.1 11.3 11.3 7.1 12 1.5z" fill="currentColor"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-8.5-5.3-8.5-11.3C3.5 6.6 5.7 4.5 8.3 4.5c1.6 0 3 .8 3.7 2.1.7-1.3 2.1-2.1 3.7-2.1 2.6 0 4.8 2.1 4.8 5.2C20.5 15.7 12 21 12 21z" fill="currentColor"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></symbol>
+  <symbol id="next" viewBox="0 0 24 24"><path d="M6 5v14l9-7zM17 5h2v14h-2z"/></symbol>
+</svg>
+
+<div class="bg" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><div class="guest" id="guest"><img src="assets/kaela-wavecrest.webp" alt="" decoding="async"></div><div class="waves"><span></span><span></span></div></div>
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<!-- ============ OPENING SCREEN ============ -->
+<main id="intro" class="intro">
+  <p class="hand pre">something small, just for you</p>
+  <div class="float">
+    <div class="scene">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="card" aria-hidden="true">
+          <svg class="mini"><use href="#heart"/></svg>
+          <span></span><span></span><span class="short"></span>
+        </div>
+        <div class="pocket"><b class="hand to">open me</b></div>
+        <div class="flap"></div>
+        <button class="seal" id="seal" aria-label="Open your letter">
+          <svg viewBox="0 0 24 24"><use href="#heart"/></svg>
+        </button>
+      </div>
+      <div class="env-shadow"></div>
+    </div>
+  </div>
+  <hidden><button class="open-btn" id="openBtn" style="display: none;"></button></hidden>
+</main>
+
+<!-- ============ THE LETTER ============ -->
+<div id="letterView" class="letter-view" hidden>
+  <article class="paper">
+    <header class="reveal">
+      <p class="hand greet">My dear <span data-fill="her">Her Name</span>,</p>
+      <p class="kicker">Happy Valentine’s Day</p>
+      <p class="date" data-fill="date">February 14</p>
+    </header>
+
+    <p class="reveal dropcap">I was going to write you a simple Valentine’s message, but I accidentally turned it into a whole project. So congratulations, you’re now the owner of this. No returns.</p>
+
+    <p class="reveal">I’m really glad we started talking. You’re genuinely fun to talk to <em class="anno">(plain and simple)</em> and incredibly sweet. Talking to you makes my days better, and somehow gives me a little extra motivation to get things done. So I guess you’re good for my productivity too haha
+      <button class="gem" data-msg="Psst. This little star is the only secret in here. Hi. ✦" aria-expanded="false" aria-label="Reveal a hidden message"><svg><use href="#star"/></svg></button></p>
+
+    <div class="orn reveal"><svg><use href="#star"/></svg></div>
+
+    <p class="reveal">And I have to mention how pretty you are. I don’t think you realize just how beautiful you look sometimes. I could stare at your pictures for hours <em class="anno">(guilty)</em>, but let’s not make this any more embarrassing 😭</p>
+
+    <p class="reveal">I honestly can’t wait until I get to visit you. I want to take you to cafés, eat all sorts of things together, explore places, and just hang out without having to worry about time zones.
+      <button class="gem" data-msg="Still here? Good. Keep going. ✦" aria-expanded="false" aria-label="Reveal a hidden message"><svg><use href="#star"/></svg></button></p>
+
+    <p class="big reveal">I have a feeling we’ll have a lot of fun together.</p>
+
+    <div class="orn reveal"><svg><use href="#heart"/></svg></div>
+
+    <p class="reveal">I hope we keep getting closer, make more memories, and hopefully stay together for a long time.<span class="hl"> I really love you sweetheart, and I’d love to see where it takes us</span>.</p>
+
+    <p class="reveal">Also, I hope you have a lovely day.</p>
+
+    <div class="close reveal">
+      <p>Take care of yourself babyyy</p>
+      <p class="hand yours">Yours,</p>
+      <div class="sig" id="sig"><span data-fill="you">Your Name</span></div>
+      <p class="ps"><span class="hand">P.S.</span> I hope this letter wasn’t too much 😭😭😭. I promise I’m usually less sentimental than this.
+        <button class="gem" data-msg="You’re allowed to screenshot this. ✦" aria-expanded="false" aria-label="Reveal a hidden message"><svg><use href="#star"/></svg></button></p>
+    </div>
+  </article>
+
+  <!-- ============ FINAL SCREEN ============ -->
+  <section class="end reveal" id="end">
+    <div class="ripple"><i></i><i></i><i></i><svg><use href="#heart"/></svg></div>
+    <p class="end-title">That’s all for now.<br>I hope this made you smile.</p>
+    <p class="hand wish">Happy Valentine’s Day ♡</p>
+    <button class="ghost" id="replay">Read the letter again</button>
+  </section>
+</div>
+
+<button class="guest-hit" id="guestHit" aria-label="Tap Kaela for a message" tabindex="-1">
+  <span class="roam" id="roamText" role="status" aria-live="polite"></span>
+</button>
+
+<div class="player" id="player" hidden>
+  <button id="ppBtn" aria-label="Play music"><svg viewBox="0 0 24 24"><use href="#play"/></svg></button>
+  <button id="nextBtn" aria-label="Next song"><svg viewBox="0 0 24 24"><use href="#next"/></svg></button>
+  <span class="track" id="trackName"></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
